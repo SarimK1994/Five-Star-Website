@@ -1,0 +1,10 @@
+<?php
+require('authenticate.inc');
+require_once('db.inc');
+$sql = "delete from products where ID=?";
+$stmt = mysqli_prepare($db, $sql); 
+$stmt->bind_param('i', $_POST['ID']);
+$stmt->execute();
+require_once('redirect.inc');
+redirect('admin.html');
+?>

@@ -1,0 +1,13 @@
+<?php
+include("cart.inc");
+$cart = load_cart();
+require_once("db.inc");
+$sql = "INSERT INTO mytable (firstname, lastname, street, city, state, zip)
+        VALUES (?, ?, ?, ?, ?, ?)";
+$stmt = mysqli_prepare($db, $sql);
+$stmt->bind_param("sssssi", $_POST['firstname'], $_POST['lastname'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']);
+$stmt->execute();
+include("header.inc");
+print "Thank You";
+include("footer.inc");
+?>

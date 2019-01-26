@@ -1,0 +1,14 @@
+<?php
+require('authenticate.inc');
+require_once('db.inc');
+$sql = "update products set Name=?, Price=?, Description=?
+where ID=?";
+$stmt = mysqli_prepare($db, $sql);
+$stmt->bind_param('sdsi', $_POST['Name'], $_POST['Price'], $_POST['Description'],
+$_POST['ID']);
+$stmt->execute();
+?> 
+<?php
+require_once('redirect.inc');
+redirect('admin.html');
+?>

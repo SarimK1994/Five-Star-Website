@@ -1,0 +1,21 @@
+<?php include('header.inc'); ?>
+        <p id='services'>Sevices offered:</p>
+<p>
+    <?php
+    require_once("db.inc"); 
+    $result = $db->query("select * from products");
+    while($row = $result->fetch_object()) {
+      print "<div class='product'>";
+      print "<b>".$row->Name."</b><br>";
+      print "$".$row->Price."<br>";
+      print $row->Description."<br>";
+      print "<form action='cart.html' method='post'>";
+      print "<input type='hidden' name='ID' value='".$row->ID."'>";
+      print "<button type='submit'>Add to Cart</button>";
+      print "</form>";
+      print "</div>";
+    }
+  ?>
+</p>
+              </div>
+              <?php include('footer.inc'); ?>

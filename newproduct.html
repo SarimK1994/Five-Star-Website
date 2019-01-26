@@ -1,0 +1,17 @@
+<?php 
+require('authenticate.inc');
+require_once('db.inc');
+$sql = "insert into products(ID, Name, Price, Description) values
+(?, ?, ?, ?)";
+$stmt = mysqli_prepare($db, $sql);
+$stmt->bind_param('isds', $_POST['ID'], $_POST['Name'], $_POST['Price'], $_POST['Description']);
+$stmt->execute();
+?>
+<?php
+require_once('redirect.inc');
+redirect('admin.html');
+?>
+
+
+
+

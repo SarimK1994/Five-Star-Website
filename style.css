@@ -1,0 +1,207 @@
+/***************************Header Styling***************************/ 
+#header {
+	position:absolute;
+	top:60px;
+	left:calc(50vw - 250px);
+	text-align: center;
+	font-size:1.5rem;
+	font-weight:bold;
+	min-width:500px;
+}
+
+/***************************Navigation menu styling***************************/ 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(153, 153, 153);
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.active {
+    background-color: rgba(12, 21, 153, 0.836);
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li:last-child {
+    border-right: none;
+}
+li a:hover {
+    background-color: rgba(255, 253, 253, 0.884);
+}
+
+/**************************Content styling***************************/ 
+.content {
+    margin-top: 200px;
+	text-align: center;
+}
+
+/***************************Copyright Styling***************************/
+#footer {
+    font-weight: bold;
+	height:2.5rem;
+	padding-top:1.5rem;
+	text-align: center;
+}
+
+/***************************Index images***************************/
+.extraImages1 {
+    
+    height: 200px;
+    width: auto;
+}
+.extraImages2 {
+    
+    height: 200px;
+    width: auto;
+}
+.extraImages3 {
+    
+    height: 200px;
+    width: auto;
+}
+
+/***************************products page content****************************/
+#services {
+    text-align: left;
+    font-size: 50px;
+}
+
+.image1 {
+    height: 300px;
+    width: auto;
+}
+.image2 {
+    height: 300px;
+    width: auto;
+}
+.image3 {
+    height: 300px;
+    width: auto;
+}
+
+.productService {
+    text-align: center;
+}
+
+.productPrice {
+    text-align: center;
+}
+
+.productDescription {
+    text-align: center;
+}
+
+#productTable td, #productTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/***************************Reviews Page***************************/
+.checkout {
+    text-align: left; 
+    font-weight: bold;
+}
+
+.extraImages4 {
+    
+    height: 200px;
+    width: auto;
+}
+.extraImages5 {
+    
+    height: 200px;
+    width: auto;
+}
+.extraImages6 {
+    
+    height: 200px;
+    width: auto;
+}
+
+#reviewsList {
+    float:none; 
+    border-right: 0;
+    border-right: 0;
+
+}
+
+/***************************Contact Page***************************/
+
+
+body{
+    background-color: #b4b4b425;
+}
+
+@media only screen and (min-width:40em) {
+    #menu {
+        box-sizing:border-box;
+        text-align:center;
+        width:100%;
+       }
+       #menu a {
+        display:block;
+       }
+
+       #content {
+        box-sizing:border-box;
+        width:100%;
+       }
+
+       #footer {
+        box-sizing:border-box;
+        width:100%;
+       }
+}
+
+/**********************Order Page***********/
+input.address {
+    width: 37.05em;
+}
+
+h1 {
+    text-align: center; 
+    font-size: 100%;
+}
+
+h2 {
+    text-align: left;
+    font-size: 100%;
+}
+
+#emailAddress {
+    width: 20em; 
+}
+
+/**************** Products *************/
+div.product {
+    display:block;
+    border:1px solid gray;
+    margin:8px;
+    padding:4px;
+   }
+   div.product form {
+    margin:0px;
+    border:0px;
+    padding:0px;
+   }
+   div.product button {
+    border-radius:0.5em;
+    background-color:#dfd;
+   }
+   div.product img {
+    float:left;
+    width:4em;
+    margin-right:4px;
+   }

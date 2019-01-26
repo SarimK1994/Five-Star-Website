@@ -1,0 +1,30 @@
+<?php
+include('cart.inc');
+$cart = load_cart();
+if(!is_array($cart)) $cart = array();
+if(!empty($_POST['ID'])) {
+    if(empty($cart[$_POST['ID']])) $cart[$_POST['ID']] = 1;
+    else $cart[$_POST['ID']]++;
+   }
+$ID = isset($_GET['ID']) ? intval($_GET['ID']) : 0 ;
+$qty = isset($_GET['qty']) ? intval($_GET['qty']) : -1 ;
+if($ID > 0) {
+    if($qty < -1) $qty = -1;
+    if($ID<1) $ID = 0;
+    if($qty<0) $qty = 0;
+    if($qty>100) $qty = 100;
+    if($ID > 0) {
+        if($qty == -1) {
+        if(!isset($cart[$ID])) $cart[$ID] = 1;
+        else $cart[$ID]++;
+        }
+        elseif($qty == 0) unset($cart[$ID]);
+        else $cart[$ID] = $qty;
+       }
+}
+setcookie('cart', serialize($cart), time()+60*60*24*7);
+include("header.inc"); 
+show_cart($cart);
+print"<a href='emptycart.html'>Empty Cart</a>"; 
+include("footer.inc"); 
+?>
